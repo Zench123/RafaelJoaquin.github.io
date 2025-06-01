@@ -1,0 +1,11 @@
+#carouselExampleCaptions {
+    max-width: 600px;
+    margin: 0 auto;   
+  }
+
+  #carouselExampleCaptions img {
+    object-fit: contain; 
+    height: 300px;       
+    width: 100%;   
+    color: blue;     
+  }
