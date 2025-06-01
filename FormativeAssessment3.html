@@ -1,372 +1,340 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <title>Employment Registration Form </title>
-
-
-
-
-    
-
-<style>
-    body{
-font-family: sans-serif;
-background-color: rgb(36, 24, 73) ;
-color: aliceblue;
-    }
-    h2{
-        text-align: center;
-    }
-table{
-width: 80%;
-margin: 30px auto;
-border-collapse: collapse;
-
-}
-th, td{
-
-    border: 3px solid rgb(0, 0, 0);
-    padding: 10px;
-    text-align: left;
-}
-
-
-
-.section{
-
-margin-top: 30px;
-}
-
-.center{
-text-align: center;
-}
-
-
-
-
-
-
-</style>
-<form>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Employment Registration Form</title>
 </head>
 
+<body>
+<div class="container my-5">
+<form class="needs-validation" novalidate>
 
+<h2>Employee Registration Form</h2>
+<p><img src="https://i.pinimg.com/736x/1d/dc/c9/1ddcc96d17b6d26d175242ddd01f2d79.jpg"></p>
+<h2>Personal Information</h2>
 
-<div class="section">
-<h2>Employee Registration Form </h2>
-<p><img src="https://i.pinimg.com/736x/1d/dc/c9/1ddcc96d17b6d26d175242ddd01f2d79.jpg" style="display: block; margin: auto; width: 8%;"></p>
-<th> <h3 p style="text-align: center; font-size: 30px;">Personal Information</h3></th>
-
-<table>
-    <div class="section">
+<table class="table text-start table-dark" style="text-align: center;">
 <tr>
-<th colspan="4">Name: </th> 
-<td><input type="text" Name="lastname" placeholder="lastname">      </td> 
-<td><input type="text" Name="firstname" placeholder="firstname"> </td>
-<td> <input type="text" Name="Middlename" placeholder="Middlename"></td>
+    <div class="col-md-4">
+        <th><label for="validationCustom01" class="form-label">First name</label></th>
+        <td><input type="text" class="form-control text-opacity-50" id="validationCustom01" value="" placeholder="Rafael" required></td> 
+        
+        <div class="invalid-feedback">Required</div>
+    </div>
+
+    <div class="col-md-4">
+        <th><label for="validationCustom02" class="form-label">Last name</label></th>
+        <td><input type="text" class="form-control" id="validationCustom02" value="" placeholder="Joaquin" required></td>
+      
+        <div class="invalid-feedback">Required</div>
+    </div>
+
+    <div class="col-md-4">
+        <th><label for="validationCustom023" class="form-label">Middle name</label></th>
+        <td><input type="text" class="form-control" id="validationCustom023" value="" placeholder="Nieto" required></td>
+   
+        <div class="invalid-feedback">Required</div>
+    </div>
 </tr>
 
 <tr>
-<th>Sex: </th> 
-<td colspan="3"><select required >
-<option value="select">Select</option>
-<option value="Male">Male</option>
-<option value="Female">Female</option>
-</select>
- </td>
-</tr>
-
-
-
-
-
-<tr>
-<th>Date of Birth: </th> 
-<td colspan="3"><input type="date"required> </td>
-</tr>
-
-
-
-<tr>
-<th>Valid ID:</th> 
-<td><input type="file" id="user image" name="image" accept="imagefile" required> </td>
+    <th>Sex:</th>
+    <td colspan="3">
+        <div class="border border-info rounded">
+            <select class="form-select" name="sex" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+    </td>
 </tr>
 
 <tr>
-<th>Nationality: </th>
-<td> <select id="Citizenship" name="Citizenship" required> 
-<option value="select">choose nationality</option>
-<option value="Filipino">Filipino</option>
-<option value="American">American</option>
-<option value="Deutch">Deutch</option>
-
-
-
-</td>
+    <th>Date of Birth:</th>
+    <td colspan="3"><input type="date" name="dob" class="form-control" required></td>
 </tr>
 
 <tr>
-<th>Marital status: </th> 
-<td><select id="marital" name="status"required> 
-    <option value="select">select</option>
-<option value="Single">Single</option>
-<option value="married">Married</option>
 
 
+    <th>Valid ID:</th>
+    <td colspan="3">
+        <div class="input-group mb-3">
+            <div style="text-align: center;">
+<label for="file2" class="file-label-icon">
+  <input  type="file" id="file2" class="file-input-icon "  required />
+  <span>📁 Choose File</span>
+</label>
 
-</td>
-
-
-
-
-
-</tr>
-
-<tr>
-<th>Birth certificate:</th> 
-<td><input type="file" id="user image" name="image" accept="imagefile"required> </td>
-</tr>
-
-
-
-
-
-</table>
-<br><h3 p style="text-align: center; font-size: 30px;">Contact Information</h3><br>
-<table>
-
-
-<th> Place of birth: </th>
-<td><input type="text" name="place of birth" required></td>
-
-
-<tr>
-<th>Address: </th>
-<td><textarea name="address" rows="1" cols="25" placeholder="Number 4. Privet Drive" required></textarea> </td>
-</tr>
-
-
-<tr>
-<th>Email Address: </th> 
-<td><input type="text" Name="email" required> </td> 
-</tr>
-
-
-<tr>
-<th>Phone number: </th> 
-<td><input type="tel" id="phone" name="phone"   placeholder="+63 123 456 7890" required> </td> 
-</tr>
-
-
-
-
-
-</table>
 </div>
 
+            <div class="invalid-feedback">Please enter a valid I.D</div>
 
+        </div>
+       
+    </td>
+</tr>
 
+<tr>
+    <th> <label for="nationality">Nationality:</label></th>
+    <td colspan="3">
+        <select class="border-info form-control border-success" name="nationality" required>
+            <option value="">Choose nationality</option>
+            <option value="Filipino">Filipino</option>
+            <option value="American">American</option>
+            <option value="Deutch">Deutch</option>
+        </select>
+        <div class="invalid-feedback">Please select an option</div>
+    </td>
+</tr>
 
+<tr>
+    <th>Marital Status:</th>
+    <td colspan="3">
+        <select name="status" class="border-info form-control border-success" required>
+            <option value="">Select</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+        </select>
+       <div class="invalid-feedback">Please Upload the required document</div>
+    </td>
+</tr>
 
-
-
-
-
-
-
-
+<tr>
+    <th>Birth Certificate:</th>
+    <td colspan="3">
+        <div class="input-group mb-3">
+            <div class="input-group mb-3">
+            <div style="text-align: center;">
+<label for="file2" class="file-label-icon">
+  <input  type="file" id="file2" class="file-input-icon "  required />
+  <span>📁 Choose File</span>
+</label>
+        </div>
+        <div class="invalid-feedback">Please select an option</div>
+    </td>
+</tr>
 </table>
 
-<br> <h3 p style="text-align: center; font-size: 30px;">Education Information</h3><br>
-
-<table>
+<h3 class="center-text">Contact Information</h3>
+<table class="table text-start table-dark" style="text-align: center;">
 <tr>
-<th>Education: </th> 
-<td><textarea name="education" rows="1" cols="50" placeholder="Hogwarts School of Witchcraft and Wizardry"></textarea> </td> 
+    <div class="col-md-6">
+        <th><label for="validationCustom03" class="form-label">City</label></th>
+        <td colspan="3"><input type="text" class="form-control" id="validationCustom03" required></td>
+        <div class="invalid-feedback">Please provide a valid city.</div>
+    </div>
 </tr>
 
 <tr>
-<th>Degrees: </th> 
-<td><textarea name="degrees" rows="1" cols="50" placeholder="Masters dergree in 'Defense againts the dark arts'"></textarea> </td> 
-</tr>
-
-
-
-
-
-
-    
-</table>
-<br><h3  p style="text-align: center; font-size: 30px;">Health Information</h3>
-<table>
-
-<h2>Check the box if you have the following conditions</h2>
-
-    <tr>
-<th>Heart probblems </th><br>
-
-<td>
-
-
-<label><input type="radio" name="heart" value="check" >Yes</label>
-
-
-
-</td>
-<td>
-
-<label><input type="radio" name="heart" value="check" >No</label>
-
-</td>
-    </tr>
-    <tr>
-<th>Breathing difficulties</th>
-
-    
-<td>
-
-
-<label><input type="radio" name="Breathing" value="check" >Yes</label>
-
-
-
-</td>
-<td>
-
-<label><input type="radio" name="Breathing" value="check" >No</label>
-
-</td>
+    <th><label for="address">Address:</label></th>
+    <td colspan="3"><textarea name="address" rows="1" cols="25" placeholder="Number 4. Privet Drive" class="border-info form-control border-success" required></textarea></td>
+<div class="invalid-feedback">Please enter address.</div>
 
 </tr>
 
-
-   <tr>
-<th>Mental Disorders</th>
-
-    
-<td>
-
-
-<label><input type="radio" name="Mental" value="check" >Yes</label>
-
-
-
-</td>
-<td>
-
-<label><input type="radio" name="Mental" value="check" >No</label>
-
-</td>
-
-</tr>
-
-   <tr>
-<th>Chronic illness</th>
-
-    
-<td>
-
-
-<label><input type="radio" name="Chronic" value="check">Yes</label>
-
-
-
-</td>
-<td>
-
-<label><input type="radio" name="Chronic" value="check" >No</label>
-
-</td>
-
-</tr>
-
-   <tr>
-<th>Disabilities</th>
-
-    
-<td>
-
-
-<label><input type="radio" name="Disabilities" value="check">Yes</label>
-
-
-
-</td>
-<td>
-
-<label><input type="radio" name="dis" value="check">No</label>
-
-</td>
-
-</tr>
-
-
-
-
-</table>
-<br><h3 style="text-align: center; font-size: 30px;">Job Information</h3>
-<table>
-<th>Position of Application:</th>
-<td><select id="position" name="title"> 
-    <option value="select">select</option>
-<option value="Single">Director</option>
-<option value="Position">Administrator</option>
-<option value="Position">Manager</option>
-<option value="Position">Assistant manager</option>
-
-
-
-
-</td>
-<th>Department:</th>
-<td><select id="position" name="title"> 
-    <option value="select">select</option>
-<option value="department">Customer service</option>
-<option value="department">Human resources</option>
-<option value="department">Marketing</option>
-<option value="department">Information technology</option>
-
-</td>
 <tr>
-<th> Previous Employers</th>
-<td><textarea name="employers" rows="1" cols="30" placeholder="Employers"></textarea></td><br>
-<td><textarea name="employers" rows="1" cols="30" placeholder="Employers"></textarea></td><br>
-<td><textarea name="employers" rows="1" cols="30" placeholder="Employers"></textarea></td><br>
+    <div class="mb-3">
+        <th><label for="email" class="form-label">Email</label></th>
+        <td colspan="3"><input type="email" class="form-control" id="email" placeholder="name@example.com" required></td>
+    </div>
 </tr>
+
 <tr>
-<th>Skills and experience:</th>
-<td><textarea name="employers" rows="5" cols="50" placeholder="Employers" ></textarea></td>
-
+    <th><label for="Number" class="form-label">Phone Number</label></th>
+    <td colspan="3"><input type="tel" name="phone" placeholder="+63 123 456 7890" class="form-control" required></td>
 </tr>
-<tr>
-<th>Reason for applying:</th>
-<td><textarea name="reason" rows="5" cols="50" required ></textarea></td>
-
-</tr>
-
 </table>
 
-<br><br>
-<div class="section">
-    <body>
+<h3 class="center-text">Education Information</h3>
+<table class="table text-start table-dark" style="text-align: center;">
+<tr>
+    <th><label for="education" class="form-label">Education:</label></th>
+    <td colspan="3"><textarea name="education" rows="1" cols="50" placeholder="Hogwarts School of Witchcraft and Wizardry" required></textarea></td>
+</tr>
 
-        <h3 style="text-align: center;">Signature</h3>
-    <p  >
-<input type="file" id="user image" name="image" accept="imagefile" style="display: block; margin: auto;" required>
+<tr>
+    <th>Degrees:</th>
+    <td colspan="3"><textarea name="degrees" rows="1" cols="50" placeholder="Master's degree in 'Defense Against the Dark Arts'" required></textarea></td>
+</tr>
+</table>
 
-</body></div>
+<h3 class="center-text">Health Information</h3>
+<table class="table table-dark text-start">
+  <tr>
+    <td colspan="3"><strong>Check the box if you have the following conditions:</strong></td>
+  </tr>
+
+  <tr>
+    <th><label class="form-label">Heart Problems</label></th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="heart" id="heartYes" value="yes" required>
+        <label class="form-check-label" for="heartYes">Yes</label>
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="heart" id="heartNo" value="no" required>
+        <label class="form-check-label" for="heartNo">No</label>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <th><label class="form-label">Breathing Difficulties</label></th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="breathing" id="breathingYes" value="yes" required>
+        <label class="form-check-label" for="breathingYes">Yes</label>
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="breathing" id="breathingNo" value="no" required>
+        <label class="form-check-label" for="breathingNo">No</label>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <th><label class="form-label">Mental Disorders</label></th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="mental" id="mentalYes" value="yes" required>
+        <label class="form-check-label" for="mentalYes">Yes</label>
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="mental" id="mentalNo" value="no" required>
+        <label class="form-check-label" for="mentalNo">No</label>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <th><label class="form-label">Chronic Illness</label></th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chronic" id="chronicYes" value="yes" required>
+        <label class="form-check-label" for="chronicYes">Yes</label>
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chronic" id="chronicNo" value="no" required>
+        <label class="form-check-label" for="chronicNo">No</label>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <th><label class="form-label">Disabilities</label></th>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="disabilities" id="disabilitiesYes" value="yes" required>
+        <label class="form-check-label" for="disabilitiesYes">Yes</label>
+      </div>
+    </td>
+    <td>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="disabilities" id="disabilitiesNo" value="no" required>
+        <label class="form-check-label" for="disabilitiesNo">No</label>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<h3 class="center-text">Job Information</h3>
+<table class="table text-start table-dark" style="text-align: center;">
+<tr>
+    <div class="form-label">
+    <th><label for="">Position of Application:</label></th>
+    <td>
+        <select name="title" class="border-info form-control border-success" required>
+            <option value="">Select</option>
+            <option value="director">Director</option>
+            <option value="admin">Administrator</option>
+            <option value="manager">Manager</option>
+            <option value="asst-manager">Assistant Manager</option>
+        </select>
+     </div>    <div class="invalid-feedback">Please provide a valid option.</div>
+    </td>
+<div class="form-label">
+    <th><label for="department">Department:</label></th>
+    <td>
+        <select name="department" class="border-info form-control border-success" required>
+            <option value="">Select</option>
+            <option value="cs">Customer Service</option>
+            <option value="hr">Human Resources</option>
+            <option value="marketing">Marketing</option>
+            <option value="it">Information Technology</option>
+        </select>
+   </div>      <div class="invalid-feedback">Please provide a valid toption.</div>
+    </td>
+</tr>
+
+<tr>
+    <div class="form-label">
+    <th><label for="">Previous Employers: (optional)</label></th>
+    <td colspan="3">
+        <textarea name="employers" rows="1" cols="30" placeholder="Employer 1"></textarea>
+        <textarea name="employers" rows="1" cols="30" placeholder="Employer 2" ></textarea>
+        <textarea name="employers" rows="1" cols="30" placeholder="Employer 3" ></textarea>
+    </td>
+  </div>  <div class="invalid-feedback">Please enter valid credentials .</div>
+</tr>
+
+<tr>
+    <th><label for="skills">Skills and Experience:</label></th>
+    <td colspan="6"><textarea name="skills" rows="5" cols="50" placeholder="Skills and experience" required></textarea></td>
+    <div class="invalid-feedback">Please provide a valid experience.</div>
+</tr>
+
+<tr>
+    <th><label for="reason">Reason for Applying:</label></th>
+    <td colspan="6"><textarea name="reason" rows="5" cols="50" required></textarea></td>
+    <div class="invalid-feedback">Please provide a valid reason.</div>
+</tr>
+</table>
 
 
 
-</p>
-
-</body>
-<h4 style="text-align: center;;">Submit Application</h4>
+<h4 class="form-label  "> Signature</h4>
 <div style="text-align: center;">
-<input type="submit"   value="Submit" style="display: inline-block ;margin: 10px; padding: 15px 10px ;font-size: 20px;margin: auto; background-color: rgb(46, 45, 47); color: aliceblue;"  >
-<input type="reset" value="clear form" style="display: inline-block ;margin: 10px; padding: 15px 10px ;font-size: 20px;margin: auto; background-color: rgb(46, 45, 47); color: aliceblue;">
+<label for="file2" class="file-label-icon">
+  <input  type="file" id="file2" class="file-input-icon "  />
+  <span>📁 Choose File</span>
+</label>
+</div>
+<h4 class="center-text">Submit Application</h4>
+<div class="text-center mt-4 text-bg-secondary">
+<button class="btn-flat-green" type="submit">Submit</button>
+    <button class="btn-flat-red" type="reset">Clear form</button>
 </div>
 
 </form>
+</div>
+
+<script>
+
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+</body>
 </html>
