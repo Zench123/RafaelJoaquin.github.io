@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon GO Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #000000;
+    }
+
+    header {
+      background: #ff0000;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1900ff;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .hero {
+      background: #fff;
+      height: 350px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .hero img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .product-card button {
+      padding: 0.5rem 1rem;
+      background: #ffcb05;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #000000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pokémon GO Store</h1>
+  </header>
+
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('shop')">Shop</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('contact')">Contact</a>
+    <a onclick="showSection('login')">Log In</a>
+    <a onclick="showSection('register')">Register</a>
+  </nav>
+
+  <section id="home" class="hero active">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokeball Logo">
+    <h2>Explore Exclusive Pokémon Gear!</h2>
+    <p>Welcome to the Pokémon GO Store! We offer official merchandise to help you show off your Trainer pride.</p>
+  </section>
+
+  <section id="shop" class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 1">
+      <h3>Pikachu Hat</h3>
+      <p>$19.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 2">
+      <h3>Pokéball Mug</h3>
+      <p>$14.99</p>
+      
+      <a href="#" onclick="setProductionInfo(event, 'checkout.html' ,'pokeball mug', '$14.99'  )">
+
+        <button>Purchase</button>
+      </a>
+
+
+
+
+
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 3">
+      <h3>Charmander Plush</h3>
+      <p>$24.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 4">
+      <h3>Pokémon T-shirt</h3>
+      <p>$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About the Pokémon GO Store</h2>
+    <p>The Pokémon GO Store is your destination for exclusive merchandise based on the mobile game Pokémon GO. Whether you're a casual player or competitive Trainer, our products help you show your Pokémon pride.</p>
+    <h3>Group Members</h3>
+    <ul>
+      <li>Allanmatth Dimayacyac - Web Designer</li>
+      <li>Jane Doe - Content Creator</li>
+      <li>John Smith - Developer</li>
+    </ul>
+    <!-- Replace with real images if available -->
+    <img src="https://via.placeholder.com/100" alt="Member 1">
+    <img src="https://via.placeholder.com/100" alt="Member 2">
+    <img src="https://via.placeholder.com/100" alt="Member 3">
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@pokemongostore.com</p>
+    <p>Phone: +1-800-POKEMON</p>
+    <p>Address: 123 Pokémon St., Pallet Town, Kanto Region</p>
+  </section>
+
+  <section id="login">
+    <h2>Log In</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password">
+    </div>
+    <button>Log In</button>
+  </section>
+
+  <section id="register">
+    <h2>Register</h2>
+    <div class="form-group">
+      <label>First Name</label><input type="text">
+    </div>
+    <div class="form-group">
+      <label>Middle Name</label>
+
+    </div>
+  </section>
+  
+  
+  
+  <script>
+
+
+
+
+function goToCheckout(imageURL, productName) {
+ localStorage.setItem("productImage", imageURL);
+ localStorage.setItem("productName", productName);
+  window.location.href = "checkout.html";
+}</script>
+</body>
+</html>
+
+
