@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon GO Store check out</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+    #paymentDetails {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid black;
+      background-color: #f0fff0;
+      text-align: center;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+.custom-button{
+   background: linear-gradient(to right, #34e89e, #0f3443); 
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.custom-button:hover{
+  background:linear-gradient(to right,#0f3443,#34e89e );
+}
+    .custom-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body style="justify-content: center; display: flex; align-items: center; height: 100vh; margin: 0; background: linear-gradient(to bottom, rgb(178, 244, 241),rgb(53, 203, 249)) ; font-size: larger;">
+    
+ 
+  
+  <table border="1" cellpadding="10" style="border-collapse: collapse; margin: auto; background: linear-gradient(to bottom, rgb(105, 192, 187),rgb(53, 249, 223)); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; width: 80%; height: 600px;">
+<tr>
+<td rowspan="2" style="text-align: center; vertical-align: middle;">
+<img src="https://storage.googleapis.com/platform-webstore-rel-assets/pgo/sku_assets/coin-bundle-large-v2.png" alt="pokecoins" width="150px">
+</td>
+<th> Product</th>
+<th>Price</th>
+
+</tr>
+<tr>
+
+<td>Pokecoin bundle</td>
+<td> php259.00</td>
+</tr>
+
+
+<tr> 
+<td></td>
+
+  <td>
+      <input type="number" min="1" max="99" value="1" style="width: 60px;">
+    </td>
+<td>
+<button class="custom-button" onclick="handleAddToCart()">Buy now</button></td>
+</tr>
+
+
+
+    </table>
+   <!-- payment option-->
+<div id="paymentSection">
+    <select id="paymentSelect" onchange="showPaymentPopup()" style ="padding: 10px; font-size: 18px; display: none;">
+<option value="">select payment method</option>
+<option value="gcash">Gcash</option>
+<option value="paypal">Paypal</option>
+<option value="Credit">Credit</option>
+
+  </select>
+
+
+<div id="paymentDetails">
+<h3>Payment method</h3>
+<p>Plese proceed <span id="methodName"></span> payment details</p>
+<button class="custom-button" onclick="finishPayment()"> Finish payment</button>
+<p id="successMessage" style="display: none; text-align: center; font-size: 20px; color: aquamarine;font-weight: bold; "></p>
+
+</div>
+</div>
+
+
+
+
+  <script>
+    function showPaymentPopup() {
+      const paymentSelect = document.getElementById("paymentSelect");
+      const selectedOption = paymentSelect.options[paymentSelect.selectedIndex].text;
+      const detailsDiv = document.getElementById("paymentDetails");
+
+      if (paymentSelect.value !== "") {
+        document.getElementById("methodName").textContent = selectedOption;
+        detailsDiv.style.display = "block";
+      } else {
+        detailsDiv.style.display = "none";
+      }
+    }
+
+    function handleAddToCart() {
+  alert('Added to cart');
+  document.getElementById("paymentSelect").style.display = "inline-block";
+}
+
+
+function finishPayment() {
+    document.getElementById("successMessage").style.display = "block";
+    alert("Payment Confirmed!");
+    window.location.href ="index.html";
+  }
+
+
+  const image = localStorage.getItem("productImage");
+  const name = localStorage.getItem("productName");
+
+  if (image && name) {
+    document.getElementById("checkoutImage").src = image;
+    document.getElementById("checkoutName").textContent = name;
+  }
+  </script>
+
+</body>
