@@ -243,13 +243,15 @@ object-fit: cover;
     <p>The Pokémon GO Store is your destination for exclusive merchandise based on the mobile game Pokémon GO.</p>
     <h3>Group Members</h3>
     <ul>
-      <li>Allanmatth Dimayacyac - Web Designer</li>
-      <li>Jane Doe - Content Creator</li>
-      <li>John Smith - Developer</li>
+      <li>Allanmatth Dimayacyac</li>
+      <li>Carl Benedict Atienza</li>
+      <li>Joaquin Leonil Abalos</li>
+       <li>Rafael Miguel N. Joaquin</li>
     </ul>
     <img src="https://via.placeholder.com/100" alt="Member 1">
     <img src="https://via.placeholder.com/100" alt="Member 2">
     <img src="https://via.placeholder.com/100" alt="Member 3">
+    <img src="https://via.placeholder.com/100" alt="Member 4">
   </section>
 
   <section id="contact">
@@ -260,20 +262,23 @@ object-fit: cover;
   </section>
 
   <section id="login">
+    <form action="">
     <h2>Log In</h2>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email">
+      <input type="email" id="email" required>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" id="password">
+      <input type="password" id="password" required>
     </div>
-    <button>Log In</button>
+    <input type="submit" value="Submit">
+        <input type="reset" value="Clear Form"></form>
   </section>
 
   <section id="register">
     <h2>Register</h2>
+    <form action="">
     <div class="form-group">
       <label>First Name</label><input type="text">
     </div>
@@ -283,24 +288,28 @@ object-fit: cover;
     </div>
     <div class="form-group">
       <label>Gender</label>
-      <select><option>Male</option><option>Female</option><option>Other</option></select>
+      <select id="gender" name="gender"><option>Male</option><option>Female</option><option>Other</option></select>
     </div>
     <div class="form-group">
-      <label>Birthday</label><input type="date" required>
+      <label>Birthday</label>
+      <input type="date" required id="birthday " name="birthday">
     </div>
     <div class="form-group">
-      <label>Email</label><input type="email" required>
+      <label>Email</label><input type="email"  id="email"  required>
     </div>
     <div class="form-group">
-      <label>Password</label><input type="password" required>
+      <label>Password</label><input type="password" id="password" name="password" required>
     </div>
     <div class="form-group">
-      <label>Confirm Password</label><input type="password" required>
+      <label>Confirm Password</label><input type="password" id="confirmPassword"   name="confirmPassword" required>
     </div>
     <div class="form-group">
-      <label>Pokémon GO Account Code</label><input type="text" required>
+      <label>Pokémon GO Account Code</label><input type="text"   id="goCode" name="goCode" required>
     </div>
-    <button>Register</button>
+    <input type="submit" value="Submit">
+        <input type="reset" value="Clear Form">
+
+        </form>
   </section>
 
 
