@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  
+
+<meta charset="UTF-8">
   <title>Pokémon GO Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -13,7 +17,7 @@
     }
 
     header {
-      background: #ff0000;
+      background: #222222;
       color: #fff;
       padding: 1rem;
       text-align: center;
@@ -22,7 +26,7 @@
     nav {
       display: flex;
       justify-content: center;
-      background: #1900ff;
+      background: #0037ff;
     }
 
     nav a {
@@ -46,7 +50,7 @@
     }
 
     .hero {
-      background: #fff;
+      background: #21fbff;
       height: 350px;
       text-align: center;
       display: flex;
@@ -78,6 +82,9 @@
       max-width: 100%;
       height: auto;
       border-radius: 8px;
+      max-height: 200px;
+      width: 100%;
+      object-fit: contain;
     }
 
     .product-card h3 {
@@ -112,74 +119,134 @@
       background: #000000;
       color: #fff;
     }
+
+    /* Checkout Styles */
+    #paymentDetails {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid black;
+      background-color: #f0fff0;
+      text-align: center;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .custom-button {
+      background: linear-gradient(to right, #34e89e, #0f3443);
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .custom-button:hover {
+      background: linear-gradient(to right, #0f3443, #34e89e);
+    }
+
+    .custom-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+.carousel-inner img{
+max-height: 400px;
+max-width: 500px;
+object-fit: cover;
+
+}
+/*.carousel-control-next-icon,
+.carousel-control-prev-icon{
+ background: linear-gradient(to right, #0f3443, #34e89e);
+ transform: scale(0.95);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+      border-radius: 50%;
+      background-size: 100% 100%;
+}
+*/
   </style>
 </head>
 <body>
   <header>
+     
+      
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/2560px-Pok%C3%A9mon_GO_logo.svg.png" alt="" style="display: block; margin: auto; max-width: 250px; height: auto;">
+    <h2 style="text-align:  left ;"><Strong>4.D.O.T.S</Strong></h2>
     <h1>Pokémon GO Store</h1>
+    
   </header>
 
-  <nav>
+  <nav style="color: aliceblue;">
     <a onclick="showSection('home')">Home</a>
     <a onclick="showSection('shop')">Shop</a>
     <a onclick="showSection('about')">About</a>
     <a onclick="showSection('contact')">Contact</a>
     <a onclick="showSection('login')">Log In</a>
     <a onclick="showSection('register')">Register</a>
+    <a onclick="showSection('checkout')">Checkout</a>
+    <a onclick="showSection('news')">Community news</a>
   </nav>
 
   <section id="home" class="hero active">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokeball Logo">
+    
     <h2>Explore Exclusive Pokémon Gear!</h2>
     <p>Welcome to the Pokémon GO Store! We offer official merchandise to help you show off your Trainer pride.</p>
   </section>
 
+
+
+
+  
   <section id="shop" class="products">
     <div class="product-card">
-      <img src="https://via.placeholder.com/200" alt="Product 1">
-      <h3>Pikachu Hat</h3>
-      <p>$19.99</p>
-      <button>Add to Cart</button>
+      <img src="https://lh3.googleusercontent.com/wM3PFpHj-EV_W9p8eB4jXVJ0-GNDi6_YOEnMa9rjovIqrugYnrI0pqSOc8b2BFR920Qlc4zBzTF-OSFWF5VFB5y-20prab-tREUbJLqsDB_-=s2400-rj" alt="Pikachu Hat" style="width: fit-content;">
+      <h3>Pokemon Go T-Shirt</h3>
+      <p>$7.99</p>
+      <button onclick="addToCart('Pokemon Go T-Shirt', '$19.99', 'https://lh3.googleusercontent.com/wM3PFpHj-EV_W9p8eB4jXVJ0-GNDi6_YOEnMa9rjovIqrugYnrI0pqSOc8b2BFR920Qlc4zBzTF-OSFWF5VFB5y-20prab-tREUbJLqsDB_-=s2400-rj')">Add to Cart</button>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/200" alt="Product 2">
-      <h3>Pokéball Mug</h3>
+      <img src="https://store.pokemongo.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fplatform-webstore-rel-assets%2Fpgo%2Fsku_assets%2Fcoin-bundle-small_v2.png&w=384&q=75" alt="Pokéball Mug">
+      <h3>Pokecoins</h3>
       <p>$14.99</p>
-      
-      <button href="#" onclick= "goToCheckout('https://via.placeholder.com/200', 'Pokeball MUg')">
-
-       Add to cart
-      </button>
-
-
-
-
-
+      <button onclick="addToCart('Pokecoins', '$14.99', 'https://store.pokemongo.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fplatform-webstore-rel-assets%2Fpgo%2Fsku_assets%2Fcoin-bundle-small_v2.png&w=384&q=75')">Add to Cart</button>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/200" alt="Product 3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkNK915VYqxGcLHyouvpj43GjSKh1J-GMapA&s" alt="Charmander Plush">
       <h3>Charmander Plush</h3>
-      <p>$24.99</p>
-      <button>Add to Cart</button>
+      <p>$11.99</p>
+      <button onclick="addToCart('Charmander Plush', '$11.99', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkNK915VYqxGcLHyouvpj43GjSKh1J-GMapA&s')">Add to Cart</button>
     </div>
+
+
+
     <div class="product-card">
-      <img src="https://via.placeholder.com/200" alt="Product 4">
-      <h3>Pokémon T-shirt</h3>
-      <p>$29.99</p>
-      <button>Add to Cart</button>
+      <img src="https://lh3.googleusercontent.com/frfXVNl6BzsPSAyr9MsA9Si9E0Gy9slYGrowAUbjTI3z_hD8uRV2pwG-xDVWeWyH13weAgE4p9mkGn-7PjkDvyt5NzhtkqIupya5t7Q7TP1f5A=e365-w1140" alt="Pokémon T-shirt">
+      <h3>2025 August Go fest Ticket</h3>
+      <p>$7.99</p>
+      <button  onclick="addToCart('2025 August Go fest Ticket', '$7.99', 'https://lh3.googleusercontent.com/frfXVNl6BzsPSAyr9MsA9Si9E0Gy9slYGrowAUbjTI3z_hD8uRV2pwG-xDVWeWyH13weAgE4p9mkGn-7PjkDvyt5NzhtkqIupya5t7Q7TP1f5A=e365-w1140')">Add to Cart</button>
     </div>
+
+
+
   </section>
 
   <section id="about">
     <h2>About the Pokémon GO Store</h2>
-    <p>The Pokémon GO Store is your destination for exclusive merchandise based on the mobile game Pokémon GO. Whether you're a casual player or competitive Trainer, our products help you show your Pokémon pride.</p>
+    <p>The Pokémon GO Store is your destination for exclusive merchandise based on the mobile game Pokémon GO.</p>
     <h3>Group Members</h3>
     <ul>
       <li>Allanmatth Dimayacyac - Web Designer</li>
       <li>Jane Doe - Content Creator</li>
       <li>John Smith - Developer</li>
     </ul>
-    <!-- Replace with real images if available -->
     <img src="https://via.placeholder.com/100" alt="Member 1">
     <img src="https://via.placeholder.com/100" alt="Member 2">
     <img src="https://via.placeholder.com/100" alt="Member 3">
@@ -210,25 +277,220 @@
     <div class="form-group">
       <label>First Name</label><input type="text">
     </div>
+  
     <div class="form-group">
-      <label>Middle Name</label>
+      <label>Last Name</label><input type="text">
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <select><option>Male</option><option>Female</option><option>Other</option></select>
+    </div>
+    <div class="form-group">
+      <label>Birthday</label><input type="date" required>
+    </div>
+    <div class="form-group">
+      <label>Email</label><input type="email" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label><input type="password" required>
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label><input type="password" required>
+    </div>
+    <div class="form-group">
+      <label>Pokémon GO Account Code</label><input type="text" required>
+    </div>
+    <button>Register</button>
+  </section>
 
+
+<!-- checkout section-->
+ <section id="checkout">
+    <table border="1" cellpadding="10" style="border-collapse: collapse; margin: auto; background: linear-gradient(to bottom, rgb(105, 192, 187),rgb(53, 249, 223)); width: 80%; height: 600px;">
+      <tr>
+        <td rowspan="2" style="text-align: center;">
+          <img id="productImage" src="" alt="" width="200">
+          <h2 id="productName"></h2>
+        </td>
+        <th><p><strong>Price:</strong> <span id="productPrice"></span></p></th>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <button class="custom-button" onclick="handleAddToCart()">Buy Now</button>
+        </td>
+      </tr>
+      
+    </table>
+
+    <div id="paymentSection">
+      <select id="paymentSelect" onchange="showPaymentPopup()" style="padding: 10px; font-size: 18px; display: none;">
+        <option value="">Select payment method</option>
+        <option value="gcash">Gcash</option>
+        <option value="paypal">Paypal</option>
+        <option value="credit">Credit</option>
+      </select>
+
+      <div id="paymentDetails">
+        <h3>Payment Method</h3>
+        <p>Please proceed with <span id="methodName"></span> payment details</p>
+        <input type="password" id="code" placeholder="Enter PIN">
+        <button class="custom-button" onclick="finishPayment()">Finish Payment</button>
+        <p id="successMessage" style="display: none; font-size: 20px; color: rgb(121, 222, 188); font-weight: bold;"></p>
+      </div>
     </div>
   </section>
-  
-  
-  
+
+
+<section id="news" class="d-flex flex-column align-items-center " style=" min-height: 100vh; ">
+
+<div class="product-card text-center p-4 rounded-3 mb-0" style="max-width: 800px; width: 100%; background-color: white;">
+<h2 >Community news</h2>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://lh3.googleusercontent.com/zhErBVg_neQ3cMlJdXZsSEbFeDMgiX7KgKipt5y1QPGuO5JKhQxjhNapqP7uZvMNMO-X7tYusKsNq49h750WhxNI8Fh-lErcPFyjXU800lyKEz4=e365-w800" class="mx-auto d-block img-fluid" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://lh3.googleusercontent.com/jox7io2I-aWcW2KOTGUSX6G9iIBEkybndSkecvZXxbbsgsrnbpd2a7E1OhgTdpS19ffJ8guFw_-8-5HRP_CFYobj3KVJik6ojVc1PiH5ZgAP=e365-pa-nu-w1350-rw" class="mx-auto d-block img-fluid" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://lh3.googleusercontent.com/b1nTAKER5wogwm7Bc5DTozujL8mz3x8COz4B4VGGwqqEIEH3tn1CffLqQ2wLyX4blDsQ9Mfm9xaCXkq1nTfllIzHScAfVRQIQGmCqqt-f_3UFmU=e365-pa-nu-w1350-rw" class="mx-auto d-block img-fluid" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<!--accordion-->
+<br><br><br><br><br><br>
+<div class="accordion accordion-flush mt-4 " id="accordionFlushExample" style="max-width: 800px; width: 100%;">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+<p>Look out on the <strong>Horizon</strong></p>
+
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body text-center">
+               <img src="https://lh3.googleusercontent.com/zhErBVg_neQ3cMlJdXZsSEbFeDMgiX7KgKipt5y1QPGuO5JKhQxjhNapqP7uZvMNMO-X7tYusKsNq49h750WhxNI8Fh-lErcPFyjXU800lyKEz4=e365-w800" class="mx-auto d-block img-fluid" alt="">
+
+<p>
+Prepare for the next genration of the Rising Voltacklers with the arrival of the Partner of Liko, Roy and Dot accompanied by Captain Pikachu. embark on a journey with your first partner pokemon coming soon
+
+</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Summertime apporaches 
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <img src="https://lh3.googleusercontent.com/b1nTAKER5wogwm7Bc5DTozujL8mz3x8COz4B4VGGwqqEIEH3tn1CffLqQ2wLyX4blDsQ9Mfm9xaCXkq1nTfllIzHScAfVRQIQGmCqqt-f_3UFmU=e365-pa-nu-w1350-rw" alt="" class="mx-auto d-block img-fluid">
+<p>        Summertime apporaches take this time to adventure to the beautiful beaches and encounter rare pokemon appearing in the summer
+</p>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Pokemon Go aniversery
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <img src="https://lh3.googleusercontent.com/jox7io2I-aWcW2KOTGUSX6G9iIBEkybndSkecvZXxbbsgsrnbpd2a7E1OhgTdpS19ffJ8guFw_-8-5HRP_CFYobj3KVJik6ojVc1PiH5ZgAP=e365-pa-nu-w1350-rw" alt="" class="mx-auto d-block img-fluid">
+
+<p> Reminisce the joy of exploration with generations of a beloved franchise! Pokemon go turns 9yrs old we thank you trainers in embarking on an unforgetful journey</p>
+
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+  <footer>
+    <p>&copy; 2025 Pokémon. All rights reserved.</p>
+
+<p>&copy; Pokémon GO is playable in English, French, German, Italian, Russian, Japanese, Spanish, Traditional Chinese, Korean, Thai, Brazillian Portuguese, Turkish, and Indonesian.
+
+©2025 Niantic, Inc. ©2025 Pokémon. ©1995–2025 Nintendo / Creatures Inc. / GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. During gameplay, please be aware of your surroundings and play safely.</p>
+<p>&copy; Any images used is for educational purposes only rights belong to GAME FREAK/ The Pokemon Company.</p>
+  </footer>
+
   <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
 
+    function addToCart(name, price, image) {
+      localStorage.setItem("productName", name);
+      localStorage.setItem("productPrice", price);
+      localStorage.setItem("productImage", image);
+      showSection('checkout');
+      loadProduct();
+    }
 
+    function loadProduct() {
+      const name = localStorage.getItem("productName");
+      const price = localStorage.getItem("productPrice");
+      const image = localStorage.getItem("productImage");
 
+      if (name && price && image) {
+        document.getElementById("productName").textContent = name;
+        document.getElementById("productPrice").textContent = price;
+        document.getElementById("productImage").src = image;
+      }
+    }
 
-function goToCheckout(imageURL, productName) {
- localStorage.setItem("productImage", imageURL);
- localStorage.setItem("productName", productName);
-  window.location.href = "Checkout.html";
-}</script>
+    function handleAddToCart() {
+      alert('Added to cart');
+      document.getElementById("paymentSelect").style.display = "inline-block";
+    }
+
+    function showPaymentPopup() {
+      const select = document.getElementById("paymentSelect");
+      const method = select.options[select.selectedIndex].text;
+      document.getElementById("methodName").textContent = method;
+      document.getElementById("paymentDetails").style.display = "block";
+    }
+
+    function finishPayment() {
+      document.getElementById("successMessage").textContent = "Payment Confirmed!";
+      document.getElementById("successMessage").style.display = "block";
+      alert("Payment Confirmed!");
+    }
+
+    
+    if (localStorage.getItem("productName")) {
+      loadProduct();
+    }
+  </script>
 </body>
 </html>
-
-
